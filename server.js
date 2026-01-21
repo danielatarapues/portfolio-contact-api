@@ -16,6 +16,11 @@ const transporter = nodemailer.createTransport({
   }
 });
 
+// Ruta de prueba para el navegador
+app.get('/', (req, res) => {
+  res.send('El servidor de contacto está funcionando correctamente 🚀');
+});
+
 app.post('/send-email', (req, res) => {
   const { name, email, subject, message } = req.body;
 
